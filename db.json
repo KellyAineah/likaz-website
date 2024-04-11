@@ -12,8 +12,8 @@
       {
         "id": 2,
         "category": "Whiskey",
-        "name": "Black Label",
-        "img": "https://images.pexels.com/photos/3868558/pexels-photo-3868558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "name": "Gallantry",
+        "img": "https://images.pexels.com/photos/2529468/pexels-photo-2529468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "description": "Smooth and complex Scotch whisky.",
         "price": 7500,
         "inventory": 15
