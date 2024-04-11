@@ -1,0 +1,82 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    font-family: 'poppins', 'sans-serif';
+    
+}
+nav{
+    background-color: #F28500;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    
+    
+    
+    
+}
+.header{
+    font-family: 'Engagement', cursive;
+    font-size: 350%;
+    font-weight: 600;
+    color: black;
+    letter-spacing: 0.5px;
+    margin-left: 10%;
+    margin-top: 1.5%;
+
+}
+.nav-items{
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    background-color: inherit;
+    border: none;
+    margin-right: 20%;
+    margin-top: 1.9%;
+}
+.nav-items li a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    transition: 0.5ms;
+}
+.nav-items li a:hover{
+    color: #f5f5f5;
+}
+.nav-items li a.active{
+    color: wheat;
+}
+.nav-items li a.active:hover{
+    color: blueviolet;
+}
+
+.card {
+    margin-bottom: 10%;
+    display: grid;
+    row-gap: 5%;
+    
+    }
+    #inventory{
+        font-style: italic;
+        font-weight: 500;
+    } 
+    .card-name{
+        color: blue;
+        font-weight: 700;
+        margin-bottom: 2%;
+    }
+
+    
+
+
+
+      
+      
+    
+   
+    
+
+  
