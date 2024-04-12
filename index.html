@@ -39,19 +39,13 @@
 
     <!-- ========== Start cart ========== -->
     <div id="cart" class="container">
-      <div id="root"></div>
-      <div class="sidebar"></div>
-      <div class="head">
-        <p>My Cart</p>
-        <div id="card-item">
-          Card is Empty
-        </div>
-        <div class="car">
-            <h2>Total</h2>
-            <h3 id="total"> Ksh.</h3>
-        </div>
+      <h2>Your Cart</h2>
+      <ul id="cart-items" class="cart-items"></ul>
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">Ksh. 0</span>
       </div>
-      <button id="view-cart-btn">View Cart</button>
+      <button id="view-cart-btn" class="btn btn-primary">View Cart</button>
     </div>
     <!-- ========== End cart ========== -->
 
@@ -62,7 +56,7 @@
     <!-- ========== Start feedback ========== -->
     <div id="feedback">
 
-
+        
         <h1 class="com">Leave a comment</h1>
         <ul id="comment-list"></ul>
         <form id="comment-form" class="comment-form">
