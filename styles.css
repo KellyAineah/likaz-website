@@ -68,8 +68,8 @@ nav{
 
     .container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns */
-        grid-gap: 20px; /* Gap between grid items */
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px; 
     }
     
     .card {
@@ -147,9 +147,7 @@ nav{
         margin-top: 5%;
         
     }
-.fa-solid {
-  color:  red;
-}
+
 
 
       

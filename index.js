@@ -64,15 +64,16 @@ form.addEventListener("submit", (e)=>{
   input.value = ""
 })
 
-function postData(commentObj) {
-  fetch(`${baseUrl}`, {
+function postData(comment) {
+  fetch(`${baseUrl}/comments`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(commentObj),
+    body: JSON.stringify(comment),
   })
     .then((res) => res.json())
+    .then(data=>console.log(data))
    
 }
 
