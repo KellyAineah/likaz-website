@@ -13,10 +13,7 @@ nav{
     justify-content: space-between;
     border: none;
     
-    
-    
-    
-}
+     }
 .header{
     font-family: 'Engagement', cursive;
     font-size: 350%;
@@ -143,7 +140,16 @@ nav{
         font-weight: 600;
       }
     
-
+    #h1{
+        color: goldenrod;
+        font-family: 'poppins', 'sans-serif';
+        font-size: 125%;
+        margin-top: 5%;
+        
+    }
+.fa-solid {
+  color:  red;
+}
 
 
       
