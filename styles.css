@@ -4,7 +4,7 @@ body{
     box-sizing: border-box;
     background-color: #f5f5f5;
     font-family: 'poppins', 'sans-serif';
-    
+    margin-top: 50px;
 }
 nav{
     background-color: #F28500;
@@ -12,7 +12,11 @@ nav{
     display: flex;
     justify-content: space-between;
     border: none;
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
      }
 .header{
     font-family: 'Engagement', cursive;
@@ -70,6 +74,7 @@ nav{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 20px; 
+        padding-top: 70px;
     }
     
     .card {
@@ -147,8 +152,72 @@ nav{
         margin-top: 5%;
         
     }
+    body{
+      transition: background-color  0.5s; 
+    
+    }
+    .darkMode {
+      background-color: #121212; 
+      color: #ffffff; 
+  }
+  
+  .darkMode nav {
+      background-color: #1e1e1e; 
+      border-bottom-color: #333; 
+  }
+  
+  .darkMode .header {
+      color: #ffffff; 
+  }
+  
+  .darkMode .nav-items li a {
+      color: #ffffff; 
+  }
+  
+  .darkMode .nav-items li a.active {
+      color: #f28500; 
+  }
+  
+  .darkMode .card {
+      background-color: #333; 
+      color: #ffffff; 
+  }
+  
+  .darkMode .card-name {
+      color: #f28500; 
+  }
+  
+  .darkMode #comment-form,
+  .darkMode .com {
+      color: #f28500; 
+  }
+  
+  .darkMode #cart {
+      background-color: #1e1e1e; 
+      border-color: #333; 
+      color: #ffffff; 
+  }
+  
+  .darkMode .btn {
+      background-color: #f28500; 
+      color: #ffffff; 
+  }
+  
+  .darkMode .btn:hover {
+      background-color: #b35800; 
+  }
+  /* Add dark mode styles for button */
+.btn-primary.darkMode {
+  background-color: #f28500;
+  color: #ffffff;
+}
+
+.btn-primary.darkMode:hover {
+  background-color: #b35800;
+}
 
 
+  
 
       
       

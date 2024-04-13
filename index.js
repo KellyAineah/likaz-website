@@ -16,7 +16,9 @@ function renderDrink(drink){
 //container where drink cards will be appended
   const output = document.querySelector(".container")
   //created a new div element to hold the drink card
+  
   const div = document.createElement("div")
+  
 
   div.innerHTML = 
   `<div class="card" style="width: 18rem;">
@@ -34,6 +36,7 @@ function renderDrink(drink){
         
         //append the new card to output container
         output.appendChild(div)
+        
 
         const imageOver = div.querySelector(".card-img-top")
         //added mouseover event listener to scale image when hovered
@@ -62,22 +65,33 @@ form.addEventListener("submit", (e)=>{
   commentList.appendChild(newComment)
   //clear the input field after submitting the comment 
   input.value = ""
+
+
+  function postData(comment) {
+    fetch(`${baseUrl}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({comment:comment}),
+    })
+      .then((res) => res.json())
+      .then(data=>{newComment.innerHTML= data.comment
+        commentList.appendChild(newComment)
+      })
+     
+  }
+    
 })
+ const darkMode = document.querySelector(".btn-primary")
+ darkMode.addEventListener("click", ()=>{
+  document.body.classList.toggle("darkMode")
 
-function postData(comment) {
-  fetch(`${baseUrl}/comments`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(comment),
-  })
-    .then((res) => res.json())
-    .then(data=>console.log(data))
-   
-}
+ })
 
-  
+ 
+
+
 
 
 
