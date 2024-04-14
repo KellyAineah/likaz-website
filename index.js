@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
   const baseUrl= "http://localhost:3000/drinks"
   //a function to fetch and render drinks
+  const cart = [];
+
   function getDrink(){
   fetch(`${baseUrl}`)
   .then(res => res.json())
@@ -36,6 +38,8 @@ function renderDrink(drink){
         
         //append the new card to output container
         output.appendChild(div)
+
+        
         
 
         const imageOver = div.querySelector(".card-img-top")
@@ -49,41 +53,49 @@ function renderDrink(drink){
           imageOver.style.transform = "scale(1.0)";
           imageOver.style.transition = "transform 0.3s";
         })
-}
-const form = document.getElementById("comment-form")
-const input = document.querySelector(".comment-input")
-const commentList = document.getElementById("comment-list")
-
-//added submit event listener to te comment form 
-
-form.addEventListener("submit", (e)=>{
-  e.preventDefault()
-  //got value of the comment input field
-  const comment = input.value
-  const newComment = document.createElement("li")
-  newComment.innerHTML = comment
-  commentList.appendChild(newComment)
-  //clear the input field after submitting the comment 
-  input.value = ""
-
-
-  function postData(comment) {
-    fetch(`${baseUrl}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({comment:comment}),
-    })
-      .then((res) => res.json())
-      .then(data=>{newComment.innerHTML= data.comment
-        commentList.appendChild(newComment)
-      })
-     
-  }
     
-})
- const darkMode = document.querySelector(".btn-primary")
+}
+// Get the comment form and other elements
+const form = document.getElementById("comment-form");
+const input = document.querySelector(".comment-input");
+const commentList = document.getElementById("comment-list");
+
+// Added submit event listener to the comment form
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get value of the comment input field and create list item
+    const comment = input.value;
+    const newComment = document.createElement("li");
+    newComment.textContent = comment; 
+    commentList.appendChild(newComment);
+
+    // Clear the input field after submitting the comment
+    input.value = "";
+
+    // Prepare the data object for POST
+    const data = { comment: newComment.textContent };
+
+    // Define function to post data
+    function postData(data) {
+        const url = "http://localhost:3000/comments"; 
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        .then((res) => res.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error posting data:', error));
+    }
+
+    // Call postData function with the prepared data
+    postData(data);
+});
+
+const darkMode = document.querySelector(".btn-primary")
  darkMode.addEventListener("click", ()=>{
   document.body.classList.toggle("darkMode")
 

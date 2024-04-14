@@ -206,7 +206,7 @@ nav{
   .darkMode .btn:hover {
       background-color: #b35800; 
   }
-  /* Add dark mode styles for button */
+  
 .btn-primary.darkMode {
   background-color: #f28500;
   color: #ffffff;
@@ -214,6 +214,10 @@ nav{
 
 .btn-primary.darkMode:hover {
   background-color: #b35800;
+}
+.darkMode .btn-primary {
+  padding: 5px 10px; 
+  font-size: 14px; 
 }
 
 

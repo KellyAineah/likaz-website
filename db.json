@@ -1,90 +1,91 @@
 {
-    "drinks": [
-      {
-        "id": 1,
-        "category": "Whiskey",
-        "name": "Jack Daniels",
-        "img": "https://images.pexels.com/photos/10023483/pexels-photo-10023483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "A Classic American whiskey with character",
-        "price": 4500,
-        "inventory": 20
-      },
-      {
-        "id": 2,
-        "category": "Whiskey",
-        "name": "Gallantry",
-        "img": "https://images.pexels.com/photos/2529468/pexels-photo-2529468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "Smooth and complex Scotch whisky.",
-        "price": 7500,
-        "inventory": 15
-      },
-      {
-        "id": 3,
-        "category": "Whiskey",
-        "name": "Red Label",
-        "img": "https://images.pexels.com/photos/3089663/pexels-photo-3089663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "Bold and versatile blended whisky",
-        "price": 2200,
-        "inventory": 25
-      },
-      {
-        "id": 4,
-        "category": "Gin",
-        "name": "The FoxTale",
-        "img": "https://images.pexels.com/photos/16490651/pexels-photo-16490651/free-photo-of-a-bottle-of-gin.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "Botanical, juniper-flavored, clear spirit",
-        "price": 2750,
-        "inventory": 30
-      },
-      {
-        "id": 5,
-        "category": "Gin",
-        "name": "Bombay",
-        "img": "https://images.pexels.com/photos/7851381/pexels-photo-7851381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "Premium, aromatic, botanical-infused gin.",
-        "price": 5799,
-        "inventory": 25
-      },
-      {
-        "id": 6,
-        "category": "Gin",
-        "name": "Tanqueray",
-        "img": "https://images.pexels.com/photos/14948417/pexels-photo-14948417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "Aromatic, herbal, versatile cocktail ingredient",
-        "price": 7999,
-        "inventory": 5
-      },
-      {
-        "id": 7,
-        "category": "Vodka",
-        "name": "Ciroc",
-        "img": "https://images.pexels.com/photos/9142627/pexels-photo-9142627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "Premium, smooth, French vodka brand.",
-        "price": 1599,
-        "inventory": 12
-      },
-      {
-        "id": 8,
-        "category": "Vodka",
-        "name": "Absolut Elyx",
-        "img": "https://images.pexels.com/photos/16845299/pexels-photo-16845299/free-photo-of-a-bottle-of-vodka-and-a-drink-on-a-bar-counter.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "Luxury, artisanal, Swedish vodka brand",
-        "price": 1799,
-        "inventory": 10
-      },
-      {
-        "id": 9,
-        "category": "Vodka",
-        "name": "Absolut Vodka",
-        "img": "https://images.pexels.com/photos/3738485/pexels-photo-3738485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "description": "Iconic Swedish vodka",
-        "price": 1499,
-        "inventory": 45
-      }
-    ]
-    
-  }
-  
-
-  
-  
+  "drinks": [
+    {
+      "id": "1",
+      "category": "Whiskey",
+      "name": "Jack Daniels",
+      "img": "https://images.pexels.com/photos/10023483/pexels-photo-10023483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "A Classic American whiskey with character",
+      "price": 4500,
+      "inventory": 18
+    },
+    {
+      "id": "2",
+      "category": "Whiskey",
+      "name": "Gallantry",
+      "img": "https://images.pexels.com/photos/2529468/pexels-photo-2529468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Smooth and complex Scotch whisky.",
+      "price": 7500,
+      "inventory": 15
+    },
+    {
+      "id": "3",
+      "category": "Whiskey",
+      "name": "Red Label",
+      "img": "https://images.pexels.com/photos/3089663/pexels-photo-3089663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Bold and versatile blended whisky",
+      "price": 2200,
+      "inventory": 25
+    },
+    {
+      "id": "4",
+      "category": "Gin",
+      "name": "The FoxTale",
+      "img": "https://images.pexels.com/photos/16490651/pexels-photo-16490651/free-photo-of-a-bottle-of-gin.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Botanical, juniper-flavored, clear spirit",
+      "price": 2750,
+      "inventory": 30
+    },
+    {
+      "id": "5",
+      "category": "Gin",
+      "name": "Bombay",
+      "img": "https://images.pexels.com/photos/7851381/pexels-photo-7851381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Premium, aromatic, botanical-infused gin.",
+      "price": 5799,
+      "inventory": 25
+    },
+    {
+      "id": "6",
+      "category": "Gin",
+      "name": "Tanqueray",
+      "img": "https://images.pexels.com/photos/14948417/pexels-photo-14948417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Aromatic, herbal, versatile cocktail ingredient",
+      "price": 7999,
+      "inventory": 5
+    },
+    {
+      "id": "7",
+      "category": "Vodka",
+      "name": "Ciroc",
+      "img": "https://images.pexels.com/photos/9142627/pexels-photo-9142627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Premium, smooth, French vodka brand.",
+      "price": 1599,
+      "inventory": 12
+    },
+    {
+      "id": "8",
+      "category": "Vodka",
+      "name": "Absolut Elyx",
+      "img": "https://images.pexels.com/photos/16845299/pexels-photo-16845299/free-photo-of-a-bottle-of-vodka-and-a-drink-on-a-bar-counter.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Luxury, artisanal, Swedish vodka brand",
+      "price": 1799,
+      "inventory": 10
+    },
+    {
+      "id": "9",
+      "category": "Vodka",
+      "name": "Absolut Vodka",
+      "img": "https://images.pexels.com/photos/3738485/pexels-photo-3738485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Iconic Swedish vodka",
+      "price": 1499,
+      "inventory": 44
+    }
+  ],
+  "comments": [
+    {
+      "id": "96ae",
+      "comment": "i love alcohol"
+    }
+  ]
+}
