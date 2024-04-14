@@ -220,8 +220,31 @@ nav{
   font-size: 14px; 
 }
 
+.comment-input {
+  width: 70%; 
+  padding: 8px 10px;
+  margin-right: 10px; 
+  border: 2px solid #F28500; 
+  border-radius: 5px; 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+  font-size: 16px; 
+}
 
-  
+#comment-form button {
+  padding: 10px 20px;
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+  font-weight: bold;
+}
+
+#comment-form button:hover {
+  background-color: #0056b3; 
+}
+
 
       
       
