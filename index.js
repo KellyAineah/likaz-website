@@ -1,60 +1,117 @@
-//Read
-document.addEventListener("DOMContentLoaded", ()=>{
-  const baseUrl= "http://localhost:3000/drinks"
-  //a function to fetch and render drinks
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const baseUrl = "http://localhost:3000/drinks";
   const cart = [];
 
-  function getDrink(){
-  fetch(`${baseUrl}`)
-  .then(res => res.json())
-  .then(listDrink => listDrink.forEach(drink => renderDrink(drink)));
-
+  function getDrink() {
+    fetch(`${baseUrl}`)
+      .then(res => res.json())
+      .then(listDrink => listDrink.forEach(drink => renderDrink(drink)));
   }
-  //call the function to fetch and render drinks when the DOM content is loaded
-  getDrink()
-})
-//created a function to render individual drink cards
-function renderDrink(drink){
-//container where drink cards will be appended
-  const output = document.querySelector(".container")
-  //created a new div element to hold the drink card
+
+  getDrink();
+
+  function renderDrink(drink) {
+    const output = document.querySelector(".container");
+    const div = document.createElement("div");
+
+    div.innerHTML = `
+      <div class="card" style="width: 18rem;">
+        <img src="${drink.img}" class="card-img-top" alt="drink picture">
+        <div class="card-body">
+          <h5 class="card-name">${drink.name}</h5>
+          <h5 class="card-title">Category: ${drink.category}</h5>
+          <p class="card-text">${drink.description}</p>
+          <p class="card-text" id="inventory-${drink.id}">${drink.inventory} Bottles Left</p>
+          <button class="btn btn-primary add-to-cart" data-id="${drink.id}" data-name="${drink.name}" data-price="${drink.price}" data-inventory="${drink.inventory}">Add to Cart <br> Ksh.${drink.price}</button>
+        </div>
+      </div>`;
+
+    output.appendChild(div);
+    const imageOver = div.querySelector(".card-img-top");
+  //added mouseover event listener to scale image when hovered
+  imageOver.addEventListener("mouseover", () => {
+    imageOver.style.transform = "scale(0.7)";
+    imageOver.style.transition = "transform 0.3s";
+  });
+  //added mouseout event listener to reset the image scale
+  imageOver.addEventListener("mouseout", () => {
+    imageOver.style.transform = "scale(1.0)";
+    imageOver.style.transition = "transform 0.3s";
+  });
   
-  const div = document.createElement("div")
-  
 
-  div.innerHTML = 
-  `<div class="card" style="width: 18rem;">
-          <img src="${drink.img}" class="card-img-top" alt="drinkpic">
-          <div class="card-body">
+    document.querySelector(`[data-id="${drink.id}"]`).addEventListener('click', function (event) {
+      const buttonClicked = event.target;
+      const itemId = buttonClicked.getAttribute('data-id');
+      const itemName = buttonClicked.getAttribute('data-name');
+      const itemPrice = parseFloat(buttonClicked.getAttribute('data-price'));
+      let itemInventory = parseInt(buttonClicked.getAttribute('data-inventory'));
 
-            <h5 class="card-name">${drink.name}</h5>
-            <h5 class="card-title" id= "category">Category: ${drink.category}</h5>
-            <p class="card-text">${drink.description}</p>
-            <p class="card-text" id="inventory">${drink.inventory} Bottles Left</p>
-            <a class="btn btn-primary">Ksh.${drink.price}</a>
-            <a href="#" class="btn btn-primary">Add to Cart</a>
-          </div>
-        </div>`;
-        
-        //append the new card to output container
-        output.appendChild(div)
+      if (buttonClicked.classList.contains('add-to-cart')) {
+        if (itemInventory > 0) {
+          itemInventory--;
+          buttonClicked.setAttribute('data-inventory', itemInventory);
+          document.getElementById(`inventory-${itemId}`).textContent = `${itemInventory} Bottles Left`;
+          addItemToCart(itemId, itemName, itemPrice);
+        } else {
+          alert("Sold Out!");
+        }
+      }
+    });
+  }
 
-        
-        
+  function addItemToCart(id, name, price) {
+    const cartItem = cart.find(item => item.id === id);
+    if (cartItem) {
+      cartItem.quantity += 1;
+    } else {
+      cart.push({ id, name, price, quantity: 1 });
+    }
+    updateCartUI();
+  }
 
-        const imageOver = div.querySelector(".card-img-top")
-        //added mouseover event listener to scale image when hovered
-        imageOver.addEventListener("mouseover", ()=>{
-          imageOver.style.transform = "scale(0.7)";
-          imageOver.style.transition = "transform 0.3s";
-        })
-        //added mouseout event listener to reset the image scale
-        imageOver.addEventListener("mouseout", ()=>{
-          imageOver.style.transform = "scale(1.0)";
-          imageOver.style.transition = "transform 0.3s";
-        })
-    
-}
+  function removeItemFromCart(id) {
+    const index = cart.findIndex(item => item.id === id);
+    if (index !== -1) {
+      if (cart[index].quantity > 1) {
+        cart[index].quantity -= 1;
+      } else {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+  }
+
+  function updateCartUI() {
+    const cartContainer = document.getElementById('cart-items');
+    cartContainer.innerHTML = ''; // Clear cart items
+    let totalItems = 0;  // This will store the sum of all quantities
+
+    cart.forEach(item => {
+      const itemElement = document.createElement('li');
+      itemElement.textContent = `${item.name} - ${item.quantity} x Ksh.${item.price}`;
+      const removeButton = document.createElement('button');
+      removeButton.innerHTML = '<span style="margin-left: 10px; font-weight: bold; color: blue;">Remove</span>';
+      removeButton.addEventListener('click', () => removeItemFromCart(item.id));
+      itemElement.appendChild(removeButton);
+      cartContainer.appendChild(itemElement);
+      totalItems += item.quantity;
+    });
+
+    const totalPrice = cart.reduce((acc, curr) => acc + (curr.price * curr.quantity), 0);
+    document.getElementById('cart-total-price').textContent = `Ksh. ${totalPrice}`;
+    document.querySelector('.nav-items span').textContent = totalItems;
+  }
+});
+const darkMode = document.querySelector(".btn-primary");
+darkMode.addEventListener("click", () => {
+  document.body.classList.toggle("darkMode");
+});
+
+
+
 // Get the comment form and other elements
 const form = document.getElementById("comment-form");
 const input = document.querySelector(".comment-input");
@@ -94,22 +151,3 @@ form.addEventListener("submit", (e) => {
     // Call postData function with the prepared data
     postData(data);
 });
-
-const darkMode = document.querySelector(".btn-primary")
- darkMode.addEventListener("click", ()=>{
-  document.body.classList.toggle("darkMode")
-
- })
-
- 
-
-
-
-
-
-
-
-
-
-
-
